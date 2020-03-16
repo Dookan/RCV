@@ -22,5 +22,8 @@ Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::prefix('admin')->group(function(){
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+    Route::get('/index-vehicles', 'VehicleController@index')->name('index.vehicles');
+    Route::get('/register-vehicle', 'VehicleController@create')->name('register.vehicle');
+    Route::post('/register-vehicle', 'VehicleController@store')->name('register.vehicle.submit');
     Route::get('/', 'AdminController@index')->name('admin');
 });
