@@ -1,4 +1,4 @@
-@extends('layouts.admin-modules')
+@extends('layouts.user-modules')
 
 @section('module')
 <div class="container">
@@ -8,7 +8,7 @@
                 <div class="card-header">Registro de vehiculo</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register.vehicle.submit') }}">
+                    <form method="POST" action="{{ route('user.register.vehicle.submit') }}">
                         @csrf
 
                         <div class="form-group row">

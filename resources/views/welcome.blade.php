@@ -68,8 +68,11 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
+                    <a class="btn" href="{{ route('admin.register') }}">admin-register</a>
+                    <a class="btn" href="{{ route('admin.login') }}">admin-login</a>
+
                     @auth
-                        <a href="{{ url('/dashboard') }}">Home</a>
+                        <a href="{{ route('dashboard') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         
@@ -80,7 +83,7 @@
                     @endauth
                 </div>
             @endif
-<a class="btn btn-primary" href="{{ route('admin.login') }}">admin-login</a>
+
             <div class="content">
                 <div class="title m-b-md">
                     RCV

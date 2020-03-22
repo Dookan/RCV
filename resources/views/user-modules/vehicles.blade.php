@@ -1,15 +1,13 @@
-@extends('layouts.admin-modules')
+@extends('layouts.user-modules')
 
 @section('module')	
 	<table class="table table-dark text-center">
 	  <thead>
 	    <tr>
 	      <th scope="col">#</th>
-	      <th scope="col">ID</th>
+	      <th scope="col">id</th>
 	      <th scope="col">Marca</th>
 	      <th scope="col">Modelo</th>
-	      <th scope="col">Usuario</th>
-	      <th scope="col">ID Usuario</th>
 	    </tr>
 	  </thead>
 	  <tbody>
@@ -19,8 +17,6 @@
 		      <td>{{$vehicle->id}}</td>
 		      <td>{{$vehicle->marca}}</td>
 		      <td>{{$vehicle->modelo}}</td>
-		      <td>{{$vehicle->user->name}}</td>
-		      <td>{{$vehicle->user->id}}</td>
 		    </tr>
 		@endforeach
 	  </tbody>
@@ -28,6 +24,6 @@
 
 	{{-- <div class="container-fluid d-flex justify-content-center mt-2">{{$vehicles->links()}}</div> --}}
 
-	<a class="btn btn-primary" href="{{ route('register.vehicle')}}">Registrar Vehiculo</a>
+	<a class="btn btn-primary" href="{{route('user.register.vehicle')}}">Registrar vehiculo</a>
 
 @endsection
