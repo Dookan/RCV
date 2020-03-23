@@ -69,8 +69,8 @@ class VehicleController extends Controller
 
         $vehicle = new Vehicle;
         $vehicle->user_id = $user_id;
-        $vehicle->marca = $request->input('marca');
-        $vehicle->modelo= $request->input('modelo');
+        $vehicle->marca = strtoupper($request->input('marca'));
+        $vehicle->modelo= strtoupper($request->input('modelo'));
         $vehicle->save();
 
 
@@ -80,8 +80,8 @@ class VehicleController extends Controller
     public function store_admin(Request $request)
     {
         $this->validate($request, [
-            'marca' => 'required|max:20',
-            'modelo'=> 'required|max:20'
+            'marca' => 'required|max:40',
+            'modelo'=> 'required|max:40'
         ]);
 
         $user = Auth::user();
@@ -89,8 +89,8 @@ class VehicleController extends Controller
 
         $vehicle = new Vehicle;
         $vehicle->admin_id = $user_id;
-        $vehicle->marca = $request->input('marca');
-        $vehicle->modelo= $request->input('modelo');
+        $vehicle->marca = strtoupper($request->input('marca'));
+        $vehicle->modelo= strtoupper($request->input('modelo'));
         $vehicle->save();
 
         return redirect('admin');

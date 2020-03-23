@@ -32,7 +32,9 @@ Route::prefix('admin')->middleware('auth:admin')->group(function(){
     Route::get('/register-vehicle', 'VehicleController@create_admin')->name('register.vehicle');
     Route::post('/register-vehicle', 'VehicleController@store_admin')->name('register.vehicle.submit');
     Route::delete('/delete-vehicle/{id}', 'VehicleController@destroy')->name('delete.vehicle');
+    Route::get('/index-users', 'AdminController@index_users')->name('index.users');
     Route::get('/', 'AdminController@index')->name('admin');
+    Route::delete('/delete-user/{id}', 'AdminController@destroy')->name('delete.vehicle');
 });
 
 /*

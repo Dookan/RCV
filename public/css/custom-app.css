@@ -17,7 +17,6 @@ a:hover{
 
 #card1:hover{
 	background-color: rgba(77, 164, 236);
-	border: 1px solid #fff;
 	transition: all 500ms;
 }
 
@@ -29,7 +28,6 @@ a:hover{
 
 #card2:hover{
 	background-color: rgba(47,218,96);
-	border: 1px solid #fff;
 	transition: all 500ms;
 }
 
