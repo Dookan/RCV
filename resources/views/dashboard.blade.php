@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <!-- <h5 class="card-title">Title</h5> -->
                     <div class="d-flex flex-row justify-content-around text-center text-white">
-                        <a class="p-5 m-1 fixed-size bg-dark rounded" href="/user/vehicles/{{$user_id}}">Vehiculos</a>
+                        <a class="p-5 m-1 fixed-size bg-dark rounded" href="{{ route('user.index.vehicles')}}">Vehiculos</a>
                         <a class="p-5 m-1 fixed-size bg-dark rounded" href="#">Vehiculos</a>
                         <a class="p-5 m-1 bg-dark rounded" href="{{ route('register') }}">Registrar Usuario</a>
                     </div>

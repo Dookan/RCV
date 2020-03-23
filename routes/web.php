@@ -28,9 +28,10 @@ Route::get('admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admi
 Route::post('admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
 
 Route::prefix('admin')->middleware('auth:admin')->group(function(){   
-    Route::get('/index-vehicles', 'VehicleController@index')->name('index.vehicles');
+    Route::get('/index-vehicles', 'VehicleController@index_admin')->name('index.vehicles');
     Route::get('/register-vehicle', 'VehicleController@create_admin')->name('register.vehicle');
     Route::post('/register-vehicle', 'VehicleController@store_admin')->name('register.vehicle.submit');
+    Route::delete('/delete-vehicle/{id}', 'VehicleController@destroy')->name('delete.vehicle');
     Route::get('/', 'AdminController@index')->name('admin');
 });
 
@@ -42,7 +43,7 @@ Route::prefix('admin')->middleware('auth:admin')->group(function(){
 Route::prefix('user')->middleware('auth')->group(function(){
 	Route::get('/register-vehicle', 'VehicleController@create')->name('user.register.vehicle');
 	Route::post('/register-vehicle', 'VehicleController@store')->name('user.register.vehicle.submit');
-	Route::get('/vehicles/{id}', 'VehicleController@show')->name('show.vehicles');
+	Route::get('/vehicles', 'VehicleController@index')->name('user.index.vehicles');
 });
 
 

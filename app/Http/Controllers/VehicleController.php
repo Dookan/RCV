@@ -17,6 +17,18 @@ class VehicleController extends Controller
     public function index()
     {
         // $vehicles = Vehicle::orderBy('id', 'asc')->paginate();
+        $user = Auth::user();
+        $user_id = $user->id;
+        $vehicles = User::find($user_id)->vehicles;
+        $counter = 0;
+
+
+        return view('user-modules.vehicles', compact('vehicles','counter'));
+    }
+
+    public function index_admin()
+    {
+        // $vehicles = Vehicle::orderBy('id', 'asc')->paginate();
         $vehicles = Vehicle::all();
         $counter = 0;
 
@@ -72,7 +84,11 @@ class VehicleController extends Controller
             'modelo'=> 'required|max:20'
         ]);
 
+        $user = Auth::user();
+        $user_id = $user->id;
+
         $vehicle = new Vehicle;
+        $vehicle->admin_id = $user_id;
         $vehicle->marca = $request->input('marca');
         $vehicle->modelo= $request->input('modelo');
         $vehicle->save();
@@ -93,14 +109,6 @@ class VehicleController extends Controller
         
         // $vehicles = U_V::find($user_id)->vehicle;
         // $relation = U_V::find($id);
-
-        $user = Auth::user();
-        $user_id = $user->id;
-        $vehicles = User::find($user_id)->vehicles;
-        $counter = 0;
-
-
-        return view('user-modules.vehicles', compact('vehicles','counter'));
 
     }
 
@@ -140,6 +148,10 @@ class VehicleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $vehicles = Vehicle::findOrFail($id);
+        $vehicles->delete();
+        return redirect('/admin');
+
+
     }
 }
