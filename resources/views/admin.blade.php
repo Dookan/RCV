@@ -15,11 +15,11 @@
                     <div class="d-flex flex-row justify-content-around text-center">
                         <a class="p-5 m-1 fixed-size text-white rounded" id="card1" href="{{ route('index.users') }}">Usuarios</a>
                         <a class="p-5 m-1 fixed-size text-white rounded" id="card2" href="{{ route('index.vehicles') }}">Vehiculos</a>
-                        <a class="p-5 m-1 fixed-size bg-dark rounded text-white" href="{{ route('register') }}">Polizas</a>
+                        <a class="p-5 m-1 fixed-size bg-dark rounded text-white" href="{{ route('index.policies') }}">Polizas</a>
                     </div>
 
                     <div class="d-flex flex-row justify-content-around text-center text-white">
-                        <a class="p-5 m-1 fixed-size bg-dark rounded text-white" href="{{ route('register') }}">Precios</a>
+                        <a class="p-5 m-1 fixed-size bg-dark rounded text-white" href="{{ route('index.prices') }}">Precios</a>
                         <a class="p-5 m-1 fixed-size bg-dark rounded text-white" href="{{ route('register') }}">Consultas de pago</a>
                         <a class="p-5 m-1 fixed-size bg-dark rounded text-white" href="{{ route('register') }}">Puestos</a>
                     </div>

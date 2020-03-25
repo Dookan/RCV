@@ -45,4 +45,8 @@ class User extends Authenticatable
     public function vehicles(){
         return $this->hasMany('App\Vehicle');
     }
+
+    public function policies(){
+        return $this->belongsToMany('App\Policy');
+    }
 }

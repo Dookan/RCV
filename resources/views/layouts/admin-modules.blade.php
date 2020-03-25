@@ -12,5 +12,8 @@
 	<main class="container">
 		@yield('module')
 	</main>
+
+	<script src="{{ asset('js/jquery.min.js') }}"></script>
+	<script src="{{ asset('js/custom-app.js') }}"></script>
 </body>
 </html>

@@ -33,8 +33,14 @@ Route::prefix('admin')->middleware('auth:admin')->group(function(){
     Route::post('/register-vehicle', 'VehicleController@store_admin')->name('register.vehicle.submit');
     Route::delete('/delete-vehicle/{id}', 'VehicleController@destroy')->name('delete.vehicle');
     Route::get('/index-users', 'AdminController@index_users')->name('index.users');
-    Route::get('/', 'AdminController@index')->name('admin');
     Route::delete('/delete-user/{id}', 'AdminController@destroy')->name('delete.vehicle');
+    Route::get('/index-policies', 'PoliciesController@index_admin')->name('index.policies');
+    Route::get('/register-policy', 'PoliciesController@create_admin')->name('register.policy');
+    Route::post('/register-policy', 'PoliciesController@create_admin')->name('register.policy.submit');
+    Route::get('/index-prices', 'PoliciesController@index_prices_admin')->name('index.prices');
+    Route::get('/register-price', 'PoliciesController@create_price')->name('register.price');
+    Route::post('/register-price', 'PoliciesController@create_price')->name('register.price.submit');
+    Route::get('/', 'AdminController@index')->name('admin');
 });
 
 /*
